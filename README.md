@@ -8,7 +8,7 @@ Dự án nghiên cứu về bài toán *tách câu tiếng Việt*, được ph�
 
 **Nhóm tác giả** 
 
-* Vương Quốc Bình (binh@haui.vn](binh@haui.vn))
+* Vương Quốc Bình ([binh@haui.vn](binh@haui.vn))
 * Vũ Anh ([anhv.ict91@gmail.com](anhv.ict91@gmail.com))
 
 
