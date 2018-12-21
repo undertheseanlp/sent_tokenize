@@ -10,6 +10,7 @@ punkt_param.abbrev_types = {'g.m.t', 'e.g', 'dr', 'dr', 'vs', "000", 'mr', 'mrs'
                             'j.k', 'e.l', 'o.t', 's.a'}
 sentence_splitter = PunktSentenceTokenizer(punkt_param)
 if __name__ == '__main__':
-    for sent in sentence_splitter.tokenize(
-            'Vào giữa những năm 1990, BS. Diệp Giản Minh, sinh năm 1977, có công kiem duoc $55.000.000 việc đơn giản trong một khu rừng. 20 năm sau, ông ta đứng trên một đế chế kinh doanh trị giá 44 tỷ USD. Nhưng giờ đây, đế chế đó đã sụp đổ và Diệp đang bị điều tra, theo CNN.'):
+    text = 'Theo người nhà nạn nhân, T. bị dập não trước, gẫy lìa đùi trái, dập chân phải và bị đa chấn thương toàn thân. Hiện T. vẫn lúc tỉnh, lúc mê nên các bác sĩ vẫn chưa thể tiến hành phẫu thuật.'
+    for sent in sentence_splitter.tokenize(text):
         print(sent)
+
