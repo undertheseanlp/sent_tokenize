@@ -1,11 +1,14 @@
-from pprint import pprint
-from nltk.tokenize.punkt import PunktSentenceTokenizer, PunktTrainer
+from nltk.tokenize.punkt import PunktTrainer
+import pickle
 
+PUNCTUATION = (';', '.', '!', '?',)
 trainer = PunktTrainer()
 trainer.INCLUDE_ALL_COLLOCS = True
-# Corpus: One sentence per line
-with open('data/test.txt', 'r') as fs:
+
+with open('./corpus.txt', 'r') as fs:
     text = fs.read()
-rs = trainer.train(text)
-abbrev_types = trainer.get_params().abbrev_types
-print(abbrev_types)
+
+trainer.train(text, verbose=True)
+params = trainer.get_params()
+with open('./egs/punkt_tokenize/vi.pkl', 'wb') as fs:
+    pickle.dump(params, fs)
