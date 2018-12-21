@@ -6,7 +6,7 @@ punkt_param = PunktParameters()
 
 
 def get_spliter():
-    with open('./egs/punkt_tokenize/vi.pkl', 'rb') as fs:
+    with open('vi.pkl', 'rb') as fs:
         punkt_param = pickle.load(fs)
 
     punkt_param.sent_starters = {}
@@ -27,14 +27,14 @@ def get_spliter():
 
 count = 0
 if __name__ == '__main__':
-    sentences = 'Theo người nhà nạn nhân, T. bị dập não trước, gẫy lìa đùi trái, dập chân phải và bị đa chấn thương toàn thân. ' \
+    text = 'Theo người nhà nạn nhân, T. bị dập não trước, gẫy lìa đùi trái, dập chân phải và bị đa chấn thương toàn thân. ' \
                 'Hiện T. vẫn lúc tỉnh, lúc mê nên các bác sĩ vẫn chưa thể tiến hành phẫu thuật. ' \
                 'Vào giữa những năm 1990, BS. Diệp Giản Minh, sinh năm 1977, có công kiem duoc $55.000.000 việc đơn giản trong một khu rừng. ' \
                 'Trong những ngày qua, khi “Mệnh lệnh 02” của Giám đốc Công an TP Hà Nội về việc lập lại trật tự giao thông đô thị đã nhận được sự đồng tình ủng hộ của đa số người dân thủ đô. ' \
                 'Hàng nghìn trường hợp vi phạm trật tự giao thông đô thị đã được cơ quan chức năng trên toàn địa bàn TP Hà Nội xử lí. ' \
                 'Tuy nhiên một số bất cập đã được lực lượng Công an thống kê và đề xuất với cơ quan quản lí Nhà nước. ' \
                 'The University of Chicago Press là một địa chỉ uy tín để các độc giả tìm đọc về Hayek.Dự án Collected Works of F. A. Hayek của họ đã cho xuất bản 19 tác phẩm và một quyển tự truyện của Hayek với sự biên tập kỹ lưỡng và tổng hợp thêm các bài phỏng vấn, bài báo nghiên cứu và thư tay, và một số bản thảo chưa được công bố của Hayek.'
-    sentence_splitter = get_spliter()
-    sentences = sentences.replace("\n", " ")
-    for sentence in sentence_splitter.sentences_from_text(sentences):
+    sent_tokenizer = get_spliter()
+    sentences = text.replace("\n", " ")
+    for sentence in sent_tokenizer.sentences_from_text(sentences):
         print(sentence)
