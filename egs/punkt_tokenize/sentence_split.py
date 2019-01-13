@@ -6,7 +6,7 @@ punkt_param = PunktParameters()
 
 
 def get_spliter():
-    with open('vi.pkl', 'rb') as fs:
+    with open('sent_tokenize_model_v1.0.pkl', 'rb') as fs:
         punkt_param = pickle.load(fs)
 
     punkt_param.sent_starters = {}
